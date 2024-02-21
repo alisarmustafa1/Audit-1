@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify Areas of Impact</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            color: #333;
+        }
+        h1 {
+            color: #5a3e99; /* Dark purple */
+            font-size: 36px;
+            text-align: center;
+        }
+        .impact-area {
+            background-color: #e8eaf6; /* Light purple background */
+            border-left: 5px solid #5a3e99; /* Dark purple border */
+            padding: 10px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .impact-area label {
+            font-weight: bold;
+            color: #5a3e99; /* Dark purple */
+            display: block;
+            margin-bottom: 5px;
+        }
+        .impact-area p {
+            color: #333;
+            font-size: 14px;
+        }
+        .impact-area input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #5a3e99; /* Dark purple */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #47307a; /* Slightly darker purple */
+        }
+        footer {
+            background-color: #5a3e99; /* Dark purple */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Identify Areas of Impact</h1>
+        <form id="impactForm">
+            <!-- Repeat the impact area block for each area -->
+            <div class="impact-area">
+                <label><input type="checkbox" name="impact" value="Privacy"> Privacy</label>
+                <p>Does your AI system handle personal or sensitive data?</p>
+            </div>
+            <!-- More impact areas -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        &copy; Your Organization Name | <a href="#" style="color: white;">Privacy Policy</a>
+    </footer>
+
+    <script>
+        document.getElementById('impactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const selectedImpacts = Array.from(formData.getAll('impact'));
+            alert('Selected Areas of Impact: ' + selectedImpacts.join(', '));
+        });
+    </script>
+</body>
+</html>
